@@ -1,9 +1,3 @@
-package com.abdelmeged.ahmed.networkito;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
 /*
  * Copyright (c) 2017 Ahmed-Abdelmeged
  *
@@ -24,6 +18,14 @@ import android.net.NetworkInfo;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
+package com.abdelmeged.ahmed.networkito;
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 
 class NetworkitoUtil {
 
