@@ -23,36 +23,12 @@ android {
     }
 }
 
-ext {
-    supportLibVersion = '26.0.1'
-    firebase_version = '11.0.2'
-    anko_version = '0.10.1'
-    arch_version = "1.0.0-alpha8"
-    dagger_version = "2.11"
-    retrofit_version = "2.3.0"
-    apache_commons_version = "2.5"
-    glide_version = "4.0.0-RC1"
-    timber_version = "4.5.1"
-    parcelable_version = "2.0.1"
-    rxJava_version = "2.1.0"
-    rxAndroid_version = "2.0.1"
-    speech_version = "1.2.2"
-    videoCache_version = "2.7.0"
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.0'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
     compile project(':networkito')
-
-    // Anko
-    compile "org.jetbrains.anko:anko-sdk15:$anko_version" // sdk19, sdk21, sdk23 are also available
-    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
-    compile "com.jakewharton.timber:timber:$timber_version"
-
+    compile "org.jetbrains.anko:anko-support-v4:0.10.1"
 }

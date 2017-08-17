@@ -37,7 +37,7 @@ public class Networkito {
     private Context context;
     private boolean isRegistered = false;
 
-    public Networkito(Context context, ConnectivityChangeListener connectivityChangeListener, LifecycleOwner lifecycleOwner) {
+    public Networkito(Context context, LifecycleOwner lifecycleOwner, ConnectivityChangeListener connectivityChangeListener) {
         this.connectivityChangeListener = connectivityChangeListener;
         this.context = context;
         new NetworkitoLifeCycleObserver(context, lifecycleOwner, ConnectivityChangesBroadcast);
