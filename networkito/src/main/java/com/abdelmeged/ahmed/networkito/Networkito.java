@@ -72,6 +72,7 @@ public class Networkito {
     public void unRegisterNetworkitoReceiver() {
         if (isRegistered) {
             context.unregisterReceiver(ConnectivityChangesBroadcast);
+            isRegistered = false;
         }
     }
 
