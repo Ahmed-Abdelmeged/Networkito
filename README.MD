@@ -17,40 +17,40 @@ Getting started
 
  * Android Architecture Components
 
-  1- Your activity must extend ```LifecycleActivity``` ,```LifecycleFragment``` or implement ```LifecycleRegistryOwner```
+    1- Your activity must extend ```LifecycleActivity``` ,```LifecycleFragment``` or implement ```LifecycleRegistryOwner```
 
-  2- Now initialize the ```Networkito``` at your ```onCreate()```
+    2- Now initialize the ```Networkito``` at your ```onCreate()```
 
-  You can use the callbacks by make your activity or fragment implement ```ConnectivityChangeListener```
+    You can use the callbacks by make your activity or fragment implement ```ConnectivityChangeListener```
 
-  and Override the two methods  
+    and Override the two methods
 
-  ```java
-  Networkito networkito = new (context, lifecycleOwner, connectivityChangeListener);
+    ```java
+    Networkito networkito = new (context, lifecycleOwner, connectivityChangeListener);
 
-   @Override
-   public void onInternetConnected(ConnectionType connectionType) {
-   }
+    @Override
+    public void onInternetConnected(ConnectionType connectionType) {
+    }
 
-   @Override
-   public void onInternetDisconnected() {
-   }
-```
+    @Override
+    public void onInternetDisconnected() {
+    }
+    ```
+    
+    or use the listener
+    ```java
+    Networkito networkito = new (context, lifecycleOwner);
 
-  or use the listener
-  ```java
-  Networkito networkito = new (context, lifecycleOwner);
+    networkito.setConnectivityChangeListener(new ConnectivityChangeListener() {
+         @Override
+         public void onInternetConnected(ConnectionType connectionType) {
+         }
 
-  networkito.setConnectivityChangeListener(new ConnectivityChangeListener() {
-           @Override
-           public void onInternetConnected(ConnectionType connectionType) {
-           }
-
-           @Override
-           public void onInternetDisconnected() {
-           }
-       });
-  ```
+         @Override
+         public void onInternetDisconnected() {
+         }
+     });
+     ```
 
 * Normal use
 
