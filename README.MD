@@ -11,17 +11,6 @@ Gradle
 compile 'com.ahmedabdelmeged:networkito:1.0.0'
 ```
 
-Add this to build.gradle project like this
-```groovy
-allprojects {
-    repositories {
-        jcenter()
-        mavenCentral()
-        maven {url "https://dl.bintray.com/ahmed0abdelmeged/Networkito"}
-    }
-}
-```
-
 Getting started
 ========
 
