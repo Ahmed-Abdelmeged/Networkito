@@ -94,9 +94,13 @@ public class Networkito {
         public void onReceive(Context context, Intent intent) {
             if (NetworkitoUtil.isAvailableInternetConnection(context)) {
                 ConnectionType currentConnectionType = NetworkitoUtil.getConnectivityStatus(context);
-                connectivityChangeListener.onInternetConnected(currentConnectionType);
+                if (connectivityChangeListener != null) {
+                    connectivityChangeListener.onInternetConnected(currentConnectionType);
+                }
             } else {
-                connectivityChangeListener.onInternetDisconnected();
+                if (connectivityChangeListener != null) {
+                    connectivityChangeListener.onInternetDisconnected();
+                }
             }
         }
     };
