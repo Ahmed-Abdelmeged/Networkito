@@ -10,6 +10,18 @@ Gradle
 ```groovy
 compile 'com.ahmedabdelmeged:networkito:1.0.0'
 ```
+
+Add this to build.gradle project like this
+```groovy
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {url "https://dl.bintray.com/ahmed0abdelmeged/Networkito"}
+    }
+}
+```
+
 Getting started
 ========
 
@@ -36,7 +48,7 @@ Getting started
     public void onInternetDisconnected() {
     }
     ```
-    
+
     or use the listener
     ```java
     Networkito networkito = new (context, lifecycleOwner);
