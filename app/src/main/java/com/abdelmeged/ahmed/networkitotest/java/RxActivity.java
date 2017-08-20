@@ -41,8 +41,8 @@ public class RxActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStop() {
+        super.onStop();
         rxNetworkito.unRegisterNetworkitoReceiver();
         disposable.dispose();
     }

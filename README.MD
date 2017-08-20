@@ -1,6 +1,6 @@
 Networkito
 ========
-Library for monitoring internet connectivity changes in android. And work with the new
+Library for reactive monitoring internet connectivity changes in android. And work with the new
 **Android Architecture Components**
 
 Download
@@ -14,7 +14,7 @@ compile 'com.ahmedabdelmeged:networkito:1.0.0'
 Getting started
 ========
 
- The library can use with normal android components or you can use it with Android Architecture Components. [JavaSamples](https://github.com/Ahmed-Abdelmeged/Networkito/tree/master/app/src/main/java/com/abdelmeged/ahmed/networkitotest/java), [KotlinSamples](https://github.com/Ahmed-Abdelmeged/Networkito/tree/master/app/src/main/java/com/abdelmeged/ahmed/networkitotest/kotlin)
+ The library can use with normal android components , Android Architecture Components and RxJava. [JavaSamples](https://github.com/Ahmed-Abdelmeged/Networkito/tree/master/app/src/main/java/com/abdelmeged/ahmed/networkitotest/java), [KotlinSamples](https://github.com/Ahmed-Abdelmeged/Networkito/tree/master/app/src/main/java/com/abdelmeged/ahmed/networkitotest/kotlin)
 
  * Android Architecture Components
 
@@ -52,6 +52,36 @@ Getting started
          }
      });
      ```
+
+* RxJava
+
+  1- initialize the ```RxNetworkito``` at your ```onCreate()```
+  ```java
+  RxNetworkito rxNetworkito = new RxNetworkito(this);
+
+  disposable =  rxNetworkito.getNetworkitoObservable()
+                       .subscribeOn(Schedulers.io())
+                       .observeOn(AndroidSchedulers.mainThread())
+                       .subscribe(connectionType -> {
+                           if (connectionType == ConnectionType.MOBILE
+                           || connectionType == ConnectionType.WIFI) {
+                             // connected
+                           } else {
+                             // disconnected
+                           }
+                       });
+  ```
+
+  and don't forget to **unRegisterNetworkito**
+  ```java
+  @Override
+   protected void onStop() {
+       super.onDestroy();
+       rxNetworkito.unRegisterNetworkitoReceiver();
+       disposable.onStop();
+   }
+  ```
+
 
 * Normal use
 
