@@ -18,7 +18,11 @@
 
         <!-- Java activities -->
         <activity android:name=".java.ArchActivity" />
-        <activity android:name=".java.ArchActivity2">
+        <activity android:name=".java.ArchActivity2" />
+        <activity android:name=".java.NormalActivity" />
+        <activity android:name=".java.NormalActivity2" />
+        <activity android:name=".java.RxActivity" />
+        <activity android:name=".kotlin.RxActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +30,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".java.NormalActivity" />
-        <activity android:name=".java.NormalActivity2" />
-
     </application>
 
 </manifest>
