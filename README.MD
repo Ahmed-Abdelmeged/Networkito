@@ -76,9 +76,9 @@ Getting started
   ```java
   @Override
    protected void onStop() {
-       super.onDestroy();
+       super.onStop();
        rxNetworkito.unRegisterNetworkitoReceiver();
-       disposable.onStop();
+       disposable.dispose();
    }
   ```
 
