@@ -3,12 +3,12 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.ahmedabdelmeged'
     PUBLISH_ARTIFACT_ID = 'networkito'
-    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_VERSION = '1.0.1'
 }
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
 
 
     defaultConfig {
@@ -30,10 +30,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compile "android.arch.lifecycle:runtime:1.0.0-alpha9"
-    compile "android.arch.lifecycle:extensions:1.0.0-alpha9"
-    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha9"
-    compile "io.reactivex.rxjava2:rxjava:2.1.3"
+    implementation "android.arch.lifecycle:extensions:1.0.0-beta2"
+    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-beta2"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.3"
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

@@ -1,7 +1,5 @@
 package com.abdelmeged.ahmed.networkitotest.java;
 
-import android.arch.lifecycle.LifecycleRegistry;
-import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,20 +11,13 @@ import com.abdelmeged.ahmed.networkito.Networkito;
 import com.abdelmeged.ahmed.networkitotest.R;
 
 
-public class ArchActivity2 extends AppCompatActivity implements LifecycleRegistryOwner, ConnectivityChangeListener {
-    LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
-
+public class ArchActivity2 extends AppCompatActivity implements  ConnectivityChangeListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new Networkito(this, this, this);
-    }
-
-    @Override
-    public LifecycleRegistry getLifecycle() {
-        return lifecycleRegistry;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.abdelmeged.ahmed.networkitotest.java;
 
-import android.arch.lifecycle.LifecycleActivity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.abdelmeged.ahmed.networkito.ConnectionType;
@@ -11,7 +11,7 @@ import com.abdelmeged.ahmed.networkito.Networkito;
 import com.abdelmeged.ahmed.networkitotest.R;
 
 
-public class ArchActivity extends LifecycleActivity implements ConnectivityChangeListener {
+public class ArchActivity extends AppCompatActivity implements ConnectivityChangeListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

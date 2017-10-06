@@ -15,7 +15,7 @@ class NormalActivity2 : AppCompatActivity(), ConnectivityChangeListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        networkito = Networkito(this, this)
+        networkito = Networkito(this, this,this)
     }
 
     override fun onInternetConnected(connectionType: ConnectionType?) {
@@ -26,8 +26,4 @@ class NormalActivity2 : AppCompatActivity(), ConnectivityChangeListener {
         toast("disconnected")
     }
 
-    override fun onStop() {
-        super.onStop()
-        networkito.unRegisterNetworkitoReceiver()
-    }
 }

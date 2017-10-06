@@ -13,13 +13,11 @@ import com.abdelmeged.ahmed.networkitotest.R;
 
 public class NormalActivity2 extends AppCompatActivity implements ConnectivityChangeListener {
 
-    private Networkito networkito;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        networkito = new Networkito(this, this);
+        Networkito networkito = new Networkito(this, this, this);
     }
 
     @Override
@@ -32,9 +30,4 @@ public class NormalActivity2 extends AppCompatActivity implements ConnectivityCh
         Toast.makeText(this, "disconnected", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        networkito.unRegisterNetworkitoReceiver();
-    }
 }
