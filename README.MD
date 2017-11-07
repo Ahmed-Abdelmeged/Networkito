@@ -8,7 +8,7 @@ Download
 
 Gradle
 ```groovy
-compile 'com.ahmedabdelmeged:networkito:1.0.0'
+compile 'com.ahmedabdelmeged:networkito:1.0.1'
 ```
 
 Getting started
