@@ -8,7 +8,7 @@ Download
 
 Gradle
 ```groovy
-compile 'com.ahmedabdelmeged:networkito:1.0.1'
+compile 'com.ahmedabdelmeged:networkito:1.1.0'
 ```
 
 Getting started
@@ -31,10 +31,12 @@ Getting started
 
     @Override
     public void onInternetConnected(ConnectionType connectionType) {
+
     }
 
     @Override
     public void onInternetDisconnected() {
+
     }
     ```
 
@@ -45,10 +47,12 @@ Getting started
     networkito.setConnectivityChangeListener(new ConnectivityChangeListener() {
          @Override
          public void onInternetConnected(ConnectionType connectionType) {
+
          }
 
          @Override
          public void onInternetDisconnected() {
+
          }
      });
      ```
@@ -94,10 +98,12 @@ Getting started
 
   @Override
   public void onInternetConnected(ConnectionType connectionType) {
+
   }
 
   @Override
   public void onInternetDisconnected() {
+
   }
   ```
 
@@ -108,10 +114,12 @@ Getting started
     networkito.setConnectivityChangeListener(new ConnectivityChangeListener() {
              @Override
              public void onInternetConnected(ConnectionType connectionType) {
+
              }
 
              @Override
              public void onInternetDisconnected() {
+
              }
          });
     ```
