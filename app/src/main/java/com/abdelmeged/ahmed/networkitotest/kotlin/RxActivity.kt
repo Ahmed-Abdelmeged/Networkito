@@ -2,9 +2,9 @@ package com.abdelmeged.ahmed.networkitotest.kotlin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.abdelmeged.ahmed.networkito.ConnectionType
-import com.abdelmeged.ahmed.networkito.RxNetworkito
 import com.abdelmeged.ahmed.networkitotest.R
+import com.ahmedabdelmeged.networkito.ConnectionType
+import com.ahmedabdelmeged.networkito.RxNetworkito
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers

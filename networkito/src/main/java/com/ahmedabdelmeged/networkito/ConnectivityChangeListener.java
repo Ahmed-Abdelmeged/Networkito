@@ -20,7 +20,7 @@
  */
 
 
-package com.abdelmeged.ahmed.networkito;
+package com.ahmedabdelmeged.networkito;
 
 
 public interface ConnectivityChangeListener {

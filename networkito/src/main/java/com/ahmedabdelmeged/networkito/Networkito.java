@@ -20,7 +20,7 @@
  */
 
 
-package com.abdelmeged.ahmed.networkito;
+package com.ahmedabdelmeged.networkito;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.content.BroadcastReceiver;
@@ -85,14 +85,35 @@ public class Networkito {
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
+        if (connectivityManager != null) {
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            return networkInfo != null && networkInfo.isConnected();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Helper method to check the internet state
+     *
+     * @return true is the internet connected . false if not
+     */
+    public static Boolean isAvailableInternetConnection(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (connectivityManager != null) {
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            return networkInfo != null && networkInfo.isConnected();
+        } else {
+            return false;
+        }
     }
 
     private BroadcastReceiver ConnectivityChangesBroadcast = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (NetworkitoUtil.isAvailableInternetConnection(context)) {
+            if (Networkito.isAvailableInternetConnection(context)) {
                 ConnectionType currentConnectionType = NetworkitoUtil.getConnectivityStatus(context);
                 if (connectivityChangeListener != null) {
                     connectivityChangeListener.onInternetConnected(currentConnectionType);

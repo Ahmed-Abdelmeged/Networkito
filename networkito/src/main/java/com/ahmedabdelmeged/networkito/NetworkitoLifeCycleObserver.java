@@ -20,7 +20,7 @@
  */
 
 
-package com.abdelmeged.ahmed.networkito;
+package com.ahmedabdelmeged.networkito;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
@@ -61,4 +61,5 @@ class NetworkitoLifeCycleObserver implements LifecycleObserver {
             isRegistered = false;
         }
     }
+
 }

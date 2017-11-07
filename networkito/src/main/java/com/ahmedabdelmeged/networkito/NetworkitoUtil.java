@@ -20,14 +20,14 @@
  */
 
 
-package com.abdelmeged.ahmed.networkito;
+package com.ahmedabdelmeged.networkito;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 
-class NetworkitoUtil {
+final class NetworkitoUtil {
 
     /**
      * Helper method to get the current connection state
@@ -52,16 +52,4 @@ class NetworkitoUtil {
         return connectionType;
     }
 
-    /**
-     * Helper method to check the internet state
-     *
-     * @return true is the internet connected . false if not
-     */
-    static Boolean isAvailableInternetConnection(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager)
-                context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
-    }
 }

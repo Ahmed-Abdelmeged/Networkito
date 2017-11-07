@@ -20,7 +20,7 @@
  */
 
 
-package com.abdelmeged.ahmed.networkito;
+package com.ahmedabdelmeged.networkito;
 
 
 import android.content.BroadcastReceiver;
@@ -76,14 +76,18 @@ public class RxNetworkito {
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
+        if (connectivityManager != null) {
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            return networkInfo != null && networkInfo.isConnected();
+        } else {
+            return false;
+        }
     }
 
     private BroadcastReceiver ConnectivityChangesBroadcast = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (NetworkitoUtil.isAvailableInternetConnection(context)) {
+            if (Networkito.isAvailableInternetConnection(context)) {
                 ConnectionType currentConnectionType = NetworkitoUtil.getConnectivityStatus(context);
                 if (publishProcessor != null) {
                     publishProcessor.onNext(currentConnectionType);
@@ -95,4 +99,5 @@ public class RxNetworkito {
             }
         }
     };
+
 }

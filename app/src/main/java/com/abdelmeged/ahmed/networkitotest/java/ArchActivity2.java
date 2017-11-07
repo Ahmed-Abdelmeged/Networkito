@@ -5,13 +5,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.abdelmeged.ahmed.networkito.ConnectionType;
-import com.abdelmeged.ahmed.networkito.ConnectivityChangeListener;
-import com.abdelmeged.ahmed.networkito.Networkito;
 import com.abdelmeged.ahmed.networkitotest.R;
+import com.ahmedabdelmeged.networkito.ConnectionType;
+import com.ahmedabdelmeged.networkito.ConnectivityChangeListener;
+import com.ahmedabdelmeged.networkito.Networkito;
 
 
-public class ArchActivity2 extends AppCompatActivity implements  ConnectivityChangeListener {
+public class ArchActivity2 extends AppCompatActivity implements ConnectivityChangeListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
